@@ -1,0 +1,18 @@
+   <?xml version="1.0" encoding="UTF-8"?>
+   <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="darkstar-upload-client" version="0.2.3">
+    <name>DarkstarUploadServiceClient</name>
+    <description>Plugin to communicate with Background Service</description>
+    <license>GPL</license>
+    <platform name="android">
+        <js-module src="www/darkstar-upload-service.js" name="DarkstarkUploadServiceClient">
+            <clobbers target="DarkstarUploadServiceClient" />
+        </js-module>
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="DarkstarUploadServiceClient">
+                <param name="android-package" value="gr.darkstar.darkstaruploadservice.DarkstarUploadServiceClient"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/DarkstarUploadServiceClient.java" target-dir="src/gr/darkstar/darkstaruploadservice"/>
+    </platform>
+</plugin>
